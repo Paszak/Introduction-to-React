@@ -60,15 +60,53 @@ var Movie = React.createClass({
 	render: function () {
 		return (
 			React.createElement('li', {},
-				React.createElement('h2', {}, this.props.movie.title),
-				React.createElement('p', {}, this.props.movie.desc),
-				React.createElement('img', {src: this.props.movie.img},)
+				React.createElement(MovieTitle, {title: this.props.movie.title},),
+				React.createElement(MovieDescription, {desc: this.props.movie.desc},),
+				React.createElement(MoviePoster, {image: this.props.movie.img},)
 			)
 		)
 	},
 });
 
+var MovieTitle = React.createClass({
+	propTypes: {
+		title: React.PropTypes.string.isRequired,
+	},
 
+	render: function () {
+		return(
+			React.createElement('h2',{}, this.props.title.title)
+		)
+	},
+});
+
+var MovieDescription = React.createClass({
+	propTypes: {
+		desc: React.PropTypes.string.isRequired,
+	},
+
+	render: function () {
+		return(
+			React.createElement('p',{}, this.props.desc.desc)
+		)
+	},
+});
+
+var MoviePoster = React.createClass({
+	propTypes: {
+		image: React.PropTypes.string.isRequired,
+	},
+
+	render: function () {
+		return(
+			React.createElement('img', {src: this.props.image.img},)
+		)
+	},
+});
+
+				// React.createElement('h2', {}, this.props.movie.title),
+				// React.createElement('p', {}, this.props.movie.desc),
+				// React.createElement('img', {src: this.props.movie.img},)
 
 var app = React.createElement(App);
 ReactDOM.render(app , document.getElementById('app'));
