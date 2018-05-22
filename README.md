@@ -1,3 +1,4 @@
-# zadanie_14_4
+# Introduction-to-React
 Pierwszy komponent - galeria
-https://paszak.github.io/zadanie_14_4/
+
+https://paszak.github.io/Introduction-to-React/
